@@ -2,3 +2,4 @@ This version supports:
 
 1) just one selected room attribute can be displayed
 2) database content is reduced to info about drawings
+3) basic support for vector drawing based on Raphael
