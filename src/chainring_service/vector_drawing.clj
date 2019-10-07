@@ -16,7 +16,6 @@
     Author: Pavel Tisnovsky")
 
 
-(require '[ring.util.response    :as http-response])
 (require '[clojure.tools.logging :as log])
 
 (require '[chainring-service.http-utils :as http-utils])
