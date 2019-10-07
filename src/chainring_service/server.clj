@@ -17,7 +17,6 @@
 
 (require '[ring.util.response      :as http-response])
 (require '[clojure.tools.logging   :as log])
-(require '[clojure.pprint          :as pprint])
 
 (require '[clj-fileutils.fileutils :as fileutils])
 
