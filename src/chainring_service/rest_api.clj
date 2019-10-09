@@ -321,8 +321,7 @@
 (defn sap-reload-mock-data
     "Reload all data used to mock SAP responses."
     [request uri]
-    (let [params            (:params request)
-          mock-sap-response (config/mock-sap-response? request)]
+    (let [mock-sap-response (config/mock-sap-response? request)]
           (if mock-sap-response
               (let [status (mocked-sap-interface/reload-mock-data)]
                     (rest-api-utils/send-response status request)))))
