@@ -400,8 +400,7 @@
 (defn all-drawings-handler
     "REST API handler for the /api/{version}/drawings endpoint."
     [request uri]
-    (let [params    (:params request)
-          buildings (db-interface/read-all-buildings)
+    (let [buildings (db-interface/read-all-buildings)
           floors    (db-interface/read-all-floors)
           drawings  (db-interface/read-all-drawings)
           response  {
