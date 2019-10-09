@@ -16,9 +16,7 @@
     Author: Pavel Tisnovsky")
 
 
-(require '[hiccup.core  :as hiccup])
 (require '[hiccup.page  :as page])
-(require '[hiccup.form  :as form])
 
 (require '[chainring-service.html-renderer :as html-renderer])
 (require '[chainring-service.html-renderer-widgets :as widgets])
