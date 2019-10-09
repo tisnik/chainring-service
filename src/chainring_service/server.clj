@@ -410,7 +410,6 @@
     "Function that prepares simple drawing preview."
     [request]
     (let [params        (:params request)
-          session       (:session request)
           drawing-name  (get params "drawing-name")]
           (log/info "Drawing name:" drawing-name)
           (if drawing-name
