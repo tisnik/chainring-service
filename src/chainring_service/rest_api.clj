@@ -16,7 +16,6 @@
     Author: Pavel Tisnovsky")
 
 
-(require '[clojure.pprint                          :as pprint])
 (require '[clojure.tools.logging                   :as log])
 
 (require '[chainring-service.db-interface          :as db-interface])
