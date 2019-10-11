@@ -144,15 +144,15 @@
 
 (defn draw-entities-from-binary-file
     "Draw all entities read from binary file."
-    [gc fin entity-count scale x-offset y-offset user-x-offset user-y-offset]
+    [gc fin entity-count scale x-offset y-offset user-x-offset user-y-offset h-center v-center]
     (.setColor gc Color/BLACK)
     (doseq [i (range entity-count)]
         (let [entity (drawings-storage/read-entity-from-binary fin)]
             (condp = (:T entity) 
-                "L" (draw-line   gc entity scale x-offset y-offset user-x-offset user-y-offset)
-                "C" (draw-circle gc entity scale x-offset y-offset user-x-offset user-y-offset) 
-                "A" (draw-arc    gc entity scale x-offset y-offset user-x-offset user-y-offset)
-                "T" (draw-text   gc entity scale x-offset y-offset user-x-offset user-y-offset)
+                "L" (draw-line   gc entity scale x-offset y-offset user-x-offset user-y-offset h-center v-center)
+                "C" (draw-circle gc entity scale x-offset y-offset user-x-offset user-y-offset h-center v-center) 
+                "A" (draw-arc    gc entity scale x-offset y-offset user-x-offset user-y-offset h-center v-center)
+                "T" (draw-text   gc entity scale x-offset y-offset user-x-offset user-y-offset h-center v-center)
                     nil
             ))))
 
@@ -386,7 +386,7 @@
                     (let [start-time (System/currentTimeMillis)]
                         (setup-graphics-context image gc width height)
                         (log/info "gc:" gc)
-                        (draw-entities-from-binary-file gc fin entity-count scale x-offset y-offset user-x-offset user-y-offset)
+                        (draw-entities-from-binary-file gc fin entity-count scale x-offset y-offset user-x-offset user-y-offset h-center v-center)
                         (draw-rooms-from-binary gc fin rooms-count scale x-offset y-offset user-x-offset user-y-offset selected room-colors h-center v-center)
                         (if (or debug show-blips)
                             (draw-selection-point gc coordsx coordsy blip-size blip-color))
