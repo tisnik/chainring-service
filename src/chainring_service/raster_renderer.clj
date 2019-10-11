@@ -341,11 +341,8 @@
     (if-let [full-name        (drawing-full-name-binary drawing-id drawing-name)]
         (let [fin             (prepare-data-stream full-name)
               gc              (.createGraphics image)
-              grid-size       (-> configuration :renderer :grid-size)
               grid-rgb        (-> configuration :renderer :grid-color)
-              grid-color      (utils/rgb->Color grid-rgb)
               boundary-rgb    (-> configuration :renderer :boundary-color)
-              boundary-color  (utils/rgb->Color boundary-rgb)
               blip-size       (-> configuration :renderer :blip-size)
               blip-rgb        (-> configuration :renderer :blip-color)
               blip-color      (utils/rgb->Color blip-rgb)]
