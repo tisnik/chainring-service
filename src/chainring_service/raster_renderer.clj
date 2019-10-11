@@ -356,6 +356,8 @@
                       bounds                                   (drawings-storage/read-bounds fin)
                       scales                                   (drawings-storage/read-scales fin scales-count)
                       scale-info (get-scale-from-scales scales width height)
+                      h-center        (/ width 2)
+                      v-center        (/ height 2)
                       x-offset   (:xoffset scale-info)
                       y-offset   (:yoffset scale-info)
                       scale      (* (:scale scale-info) user-scale)]
@@ -385,7 +387,7 @@
                         (setup-graphics-context image gc width height)
                         (log/info "gc:" gc)
                         (draw-entities-from-binary-file gc fin entity-count scale x-offset y-offset user-x-offset user-y-offset)
-                        (draw-rooms-from-binary gc fin rooms-count scale x-offset y-offset user-x-offset user-y-offset selected room-colors)
+                        (draw-rooms-from-binary gc fin rooms-count scale x-offset y-offset user-x-offset user-y-offset selected room-colors h-center v-center)
                         (if (or debug show-blips)
                             (draw-selection-point gc coordsx coordsy blip-size blip-color))
                         (log/info "Rasterization time (ms):" (- (System/currentTimeMillis) start-time))
