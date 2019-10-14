@@ -18,7 +18,6 @@
 
 (require '[hiccup.page  :as page])
 
-(require '[chainring-service.html-renderer :as html-renderer])
 (require '[chainring-service.html-renderer-widgets :as widgets])
 
 
