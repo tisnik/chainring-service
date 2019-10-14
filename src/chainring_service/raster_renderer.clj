@@ -25,7 +25,6 @@
 
 (require '[chainring-service.sap-interface    :as sap-interface])
 (require '[chainring-service.http-utils       :as http-utils])
-(require '[chainring-service.db-interface     :as db-interface])
 (require '[chainring-service.drawings-storage :as drawings-storage])
 (require '[chainring-service.drawings-cache   :as drawings-cache])
 
